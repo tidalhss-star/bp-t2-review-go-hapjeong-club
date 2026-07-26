@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유흥 트렌드 — 업종별 이용 방식과 소비 패턴 변화 분석</title>
+    <meta name="description" content="서울 지역의 유흥 트렌드 변화를 객관적인 데이터와 업종별 특성 비교를 통해 분석하는 전문 정보 블로그입니다. 셔츠룸, 가라오케, 쩜오 등 다양한 형태의 이용 방식을 정리합니다.">
+    <meta name="keywords" content="유흥 트렌드, 서울 야간 소비, 업종별 이용 방식, 가라오케 트렌드, 쩜오 분석, 비즈니스 클럽 정보">
+    <link rel="canonical" href="https://review.go-hapjeong-club.xyz/">
+    
+    <!-- Design System Meta -->
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-night-signal">
+
+    <!-- Open Graph & Twitter Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="유흥 트렌드 — 업종별 이용 방식과 소비 패턴 변화 분석">
+    <meta property="og:description" content="서울 지역의 유흥 트렌드 변화를 객관적인 데이터와 업종별 특성 비교를 통해 분석하는 전문 정보 블로그입니다.">
+    <meta property="og:url" content="https://review.go-hapjeong-club.xyz/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="유흥 트렌드 — 업종별 이용 방식과 소비 패턴 변화 분석">
+    <meta name="twitter:description" content="서울 지역의 유흥 트렌드 변화를 객관적인 데이터와 업종별 특성 비교를 통해 분석하는 전문 정보 블로그입니다.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;700;900&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #08080f;
+            --secondary: #f0f0f5;
+            --accent: #ff5c1a;
+            --accent-dim: rgba(255, 92, 26, 0.15);
+            --border-color: #222230;
+            --terminal-green: #00c8a0;
+            --gap: 32px;
+            --padding: 48px;
+            --section-gap: 80px;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border-radius: 0 !important; /* Art Direction: No rounded corners */
+        }
+
+        body {
+            background-color: var(--primary);
+            background-image: 
+                linear-gradient(var(--border-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--secondary);
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        code, pre, .q-main-2t42 {
+            font-family: 'Fira Code', 'Courier New', Courier, monospace;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        /* Layout Container */
+        .m-main-9f5y {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--padding);
+        }
+
+        /* Header Navigation */
+        .x-hero-4iiw {
+            border-bottom: 2px solid var(--accent);
+            background: rgba(8, 8, 15, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .m-hero-v75d-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .m-card-6to7 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .m-card-6to7 span {
+            color: var(--accent);
+        }
+
+        .m-hero-v75d-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .m-hero-v75d-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hamburger Menu for Mobile */
+        .v-top-d2q5 {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            border: 1px solid var(--secondary);
+            padding: 8px;
+        }
+
+        .v-top-d2q5 span {
+            width: 24px;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: 0.3s;
+        }
+
+        /* Hero Section (Transit Map Metaphor) */
+        .r-ico-behw {
+            padding: var(--section-gap) 0;
+            border-bottom: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: var(--gap);
+            align-items: start;
+        }
+
+        .r-ico-behw-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .k-body-6env-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--accent);
+            background: var(--accent-dim);
+            padding: 6px 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            width: fit-content;
+            margin-bottom: 24px;
+            font-weight: bold;
+        }
+
+        .r-ico-behw-title {
+            font-family: 'Barlow Condensed', 'Noto Sans KR', sans-serif;
+            font-size: 4.5rem;
+            line-height: 1.05;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            word-break: keep-all;
+        }
+
+        .r-ico-behw-title span {
+            color: var(--accent);
+        }
+
+        .r-ico-behw-desc {
+            font-size: 1.15rem;
+            color: #a0a0b0;
+            max-width: 600px;
+            margin-bottom: 40px;
+            word-break: keep-all;
+        }
+
+        /* Terminal Window Widget */
+        .q-item-w1uv-widget {
+            border: 1px solid var(--border-color);
+            background: #0c0c16;
+            padding: 24px;
+            position: relative;
+        }
+
+        .q-item-w1uv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: #606075;
+        }
+
+        .q-item-w1uv-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .q-item-w1uv-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--border-color);
+        }
+
+        .q-item-w1uv-dot.active {
+            background: var(--accent);
+        }
+
+        .q-item-w1uv-body {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .q-top-gp10 {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        .q-item-w1uv-line {
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        /* Transit Map Timeline Metro Stop Metaphor */
+        .t-nav-nyxe-section {
+            padding: var(--section-gap) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .t-txt-v8i2-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+
+        .t-txt-v8i2-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .t-txt-v8i2-title span {
+            color: var(--accent);
+        }
+
+        .t-txt-v8i2-meta {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #606075;
+        }
+
+        /* Metro-stop Timeline Layout */
+        .m-hero-yw27-line-container {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .m-hero-yw27-rail {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--border-color);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .m-hero-yw27-rail-active {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 65%;
+            height: 4px;
+            background: var(--accent);
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .m-hero-yw27-stops {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--gap);
+            position: relative;
+            z-index: 3;
+        }
+
+        .m-hero-yw27-stop {
+            background: #08080f;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            transition: border-color 0.3s;
+        }
+
+        .m-hero-yw27-stop:hover {
+            border-color: var(--accent);
+        }
+
+        .r-grid-xji4-dot-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .r-grid-xji4-dot {
+            width: 16px;
+            height: 16px;
+            background: #08080f;
+            border: 4px solid var(--border-color);
+            margin-right: 12px;
+        }
+
+        .m-hero-yw27-stop.active .r-grid-xji4-dot {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        .r-grid-xji4-code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: #606075;
+        }
+
+        .r-grid-xji4-name {
+            font-family: 'Barlow Condensed', 'Noto Sans KR', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .r-grid-xji4-desc {
+            font-size: 0.9rem;
+            color: #a0a0b0;
+            word-break: keep-all;
+        }
+
+        /* Articles Section - Asymmetric 1.4fr / 1fr Split */
+        .v-wrap-jb5z-section {
+            padding: var(--section-gap) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .v-wrap-jb5z-layout {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 48px;
+        }
+
+        .r-item-dvou-article {
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            background: rgba(12, 12, 22, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .v-wrap-22vm-meta {
+            display: flex;
+            gap: 16px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #606075;
+            margin-bottom: 20px;
+        }
+
+        .v-wrap-22vm-tag {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .v-wrap-22vm-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            word-break: keep-all;
+        }
+
+        .v-wrap-22vm-excerpt {
+            font-size: 1.05rem;
+            color: #a0a0b0;
+            margin-bottom: 32px;
+            word-break: keep-all;
+        }
+
+        .x-wrap-y6qu-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: bold;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 4px;
+            width: fit-content;
+        }
+
+        .x-wrap-y6qu-link:hover {
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        /* Sidebar Articles List */
+        .v-grid-scr2-articles {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .v-grid-scr2-item {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+        }
+
+        .v-grid-scr2-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .v-grid-scr2-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            word-break: keep-all;
+        }
+
+        .v-grid-scr2-title a:hover {
+            color: var(--accent);
+        }
+
+        /* Comparison Matrix Table (Art Direction: Terminal Mono) */
+        .k-img-l4zi-section {
+            padding: var(--section-gap) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .t-nav-85h8-responsive {
+            overflow-x: auto;
+        }
+
+        .k-img-l4zi-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .k-img-l4zi-table th {
+            border-bottom: 2px solid var(--accent);
+            padding: 16px;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .k-img-l4zi-table td {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 16px;
+        }
+
+        .k-img-l4zi-table tr:hover td {
+            background: rgba(255, 92, 26, 0.03);
+        }
+
+        .k-img-l4zi-badge {
+            background: #181825;
+            border: 1px solid var(--border-color);
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            color: var(--secondary);
+        }
+
+        /* FAQ Section */
+        .m-top-qaps-section {
+            padding: var(--section-gap) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .m-top-qaps-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .m-top-qaps-item {
+            border: 1px solid var(--border-color);
+            background: rgba(12, 12, 22, 0.3);
+        }
+
+        .m-top-qaps-question {
+            padding: 24px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid transparent;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .m-top-qaps-question:hover {
+            background: rgba(255, 92, 26, 0.05);
+        }
+
+        .m-top-qaps-question.active {
+            border-bottom-color: var(--border-color);
+            color: var(--accent);
+        }
+
+        .m-top-qaps-question::after {
+            content: "[+]";
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            color: var(--accent);
+        }
+
+        .m-top-qaps-question.active::after {
+            content: "[-]";
+        }
+
+        .m-top-qaps-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            color: #a0a0b0;
+            font-size: 1rem;
+            word-break: keep-all;
+        }
+
+        .m-top-qaps-answer.active {
+            padding: 24px;
+            max-height: 500px;
+        }
+
+        /* E-A-T Author Bio Block */
+        .q-nav-impe-section {
+            padding: var(--section-gap) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .q-nav-impe-card {
+            border: 1px solid var(--accent);
+            background: rgba(255, 92, 26, 0.02);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .q-nav-impe-avatar {
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            background: #0c0c16;
+        }
+
+        .q-nav-impe-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .q-nav-impe-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+
+        .q-nav-impe-name {
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+
+        .q-nav-impe-bio {
+            color: #a0a0b0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+
+        /* Footer */
+        .t-head-m1hm {
+            background: #04040a;
+            border-top: 2px solid var(--border-color);
+            padding: 60px 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #606075;
+        }
+
+        .t-head-m1hm-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap);
+            margin-bottom: 40px;
+        }
+
+        .t-head-m1hm-col h4 {
+            font-family: 'Barlow Condensed', sans-serif;
+            color: var(--secondary);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .t-head-m1hm-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .t-head-m1hm-links a:hover {
+            color: var(--accent);
+        }
+
+        .t-head-m1hm-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .r-ico-behw {
+                grid-template-columns: 1fr;
+            }
+            .m-hero-yw27-stops {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .m-hero-yw27-rail {
+                display: none;
+            }
+            .m-hero-yw27-rail-active {
+                display: none;
+            }
+            .v-wrap-jb5z-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --padding: 24px;
+                --section-gap: 60px;
+            }
+
+            .m-hero-v75d-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                border-bottom: 2px solid var(--accent);
+                padding: 24px;
+                gap: 20px;
+            }
+
+            .m-hero-v75d-links.active {
+                display: flex;
+            }
+
+            .v-top-d2q5 {
+                display: flex;
+            }
+
+            .r-ico-behw-title {
+                font-size: 3rem;
+            }
+
+            .m-hero-yw27-stops {
+                grid-template-columns: 1fr;
+            }
+
+            .q-nav-impe-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                justify-items: center;
+            }
+
+            .t-head-m1hm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://review.go-hapjeong-club.xyz/#website",
+          "url": "https://review.go-hapjeong-club.xyz",
+          "name": "유흥 트렌드 분석 블로그",
+          "description": "서울 지역의 유흥 트렌드 변화를 객관적인 데이터와 업종별 특성 비교를 통해 분석하는 전문 정보 블로그"
+        },
+        {
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://review.go-hapjeong-club.xyz"
+          },
+          "headline": "유흥 트렌드 — 업종별 이용 방식과 소비 패턴 변화 분석",
+          "description": "서울 지역의 유흥 트렌드 변화를 객관적인 데이터와 업종별 특성 비교를 통해 분석합니다.",
+          "datePublished": "2024-03-20T09:00:00+09:00",
+          "dateModified": "2024-03-20T09:00:00+09:00",
+          "author": {
+            "@type": "Person",
+            "name": "강민우",
+            "jobTitle": "서울 야간 상권 트렌드 분석가"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "유흥 트렌드 분석 센터",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://review.go-hapjeong-club.xyz/logo.png"
+            }
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "다양한 업종(쩜오, 하이퍼블릭, 가라오케 등)의 가장 큰 차이점은 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "가장 큰 차이는 운영 포지셔닝과 테이블 시스템에 있습니다. 가라오케나 노래방은 캐주얼한 모임에 적합한 대중적인 공간인 반면, 하이퍼블릭은 중간 가격대의 비즈니스 모임을 타깃으로 하며, 쩜오와 텐카페는 철저한 회원제 및 고급스러운 프라이빗 비즈니스 테이블 환경을 제공합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "유흥 트렌드 소비 시 비용 포지셔닝은 어떻게 결정되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "비용은 공간의 프라이버시 수준, 시간당 테이블 봉사료, 음료 품목 구성에 따라 단계별로 결정됩니다. 캐주얼 펍이나 노래방이 가장 낮게 포지셔닝되며, 퍼블릭/셔츠룸 계열이 중간층을, 쩜오 및 텐프로 계열이 최상위 프리미엄 포지션을 차지하는 구조적 패턴을 보입니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "처음 이용하는 소비자가 가장 주의해야 할 사항은 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "예약 전 해당 업종의 기본 시간 단위와 주류 세트 구성을 명확히 인지하는 것이 중요합니다. 특히 추가 연장(T.C 및 룸 시간)에 대한 요금 청구 기준이 업종별로 상이하므로, 사전에 규정된 요금 표를 투명하게 확인하는 것이 건전한 소비의 첫걸음입니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="x-hero-4iiw">
+        <div class="m-main-9f5y m-hero-v75d-inner">
+            <a href="/" class="m-card-6to7">
+                SEOUL <span>NIGHT TRANSIT</span>
+            </a>
+            <nav>
+                <ul class="m-hero-v75d-links" id="nav-links">
+                    <li><a href="#transit-map">트렌드 라인</a></li>
+                    <li><a href="#articles">정밀 분석</a></li>
+                    <li><a href="#matrix">비교 매트릭스</a></li>
+                    <li><a href="#faq">자주 묻는 질문</a></li>
+                </ul>
+            </nav>
+            <div class="v-top-d2q5" id="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="k-grid-y8p4-content">
+        
+        <!-- Hero Section -->
+        <section class="m-main-9f5y r-ico-behw">
+            <div class="r-ico-behw-left">
+                <div class="k-body-6env-badge">
+                    <span class="q-main-2t42">SYS.LOC: SEOUL // ROUTE-2024</span>
+                </div>
+                <h1 class="r-ico-behw-title">
+                    서울 야간 소비의<br><span>새로운 이정표</span>
+                </h1>
+                <p class="r-ico-behw-desc">
+                    급변하는 서울의 야간 상권과 유흥 트렌드를 거시적 관점에서 분석합니다. 다양한 업종의 특징, 이용 방식, 그리고 비용 구조의 변화를 한눈에 파악할 수 있도록 도식화된 데이터로 제공합니다.
+                </p>
+                <div>
+                    <a href="#transit-map" class="x-wrap-y6qu-link">트렌드 맵 자세히 보기 &gt;</a>
+                </div>
+            </div>
+            
+            <!-- Terminal Widget (Art Direction: Terminal Mono) -->
+            <div class="q-item-w1uv-widget">
+                <div class="q-item-w1uv-header">
+                    <span>SYSTEM MONITOR // ACTIVE</span>
+                    <div class="q-item-w1uv-dots">
+                        <div class="q-item-w1uv-dot"></div>
+                        <div class="q-item-w1uv-dot"></div>
+                        <div class="q-item-w1uv-dot active"></div>
+                    </div>
+                </div>
+                <div class="q-item-w1uv-body">
+                    <div class="q-item-w1uv-line">
+                        <span class="q-top-gp10">$</span>sys.query("current_trends")
+                    </div>
+                    <div class="q-item-w1uv-line" style="color: var(--accent);">
+                        &gt; 셔츠룸/하이퍼블릭: 캐주얼 비즈니스 수요 증가
+                    </div>
+                    <div class="q-item-w1uv-line" style="color: var(--terminal-green);">
+                        &gt; 쩜오/텐카페: 멤버십 프라이버시 강화 추세
+                    </div>
+                    <div class="q-item-w1uv-line">
+                        <span class="q-top-gp10">$</span>sys.get_stats("seoul_nightlife")
+                    </div>
+                    <div class="q-item-w1uv-line">
+                        - 대중성 위주 가라오케/펍 회복세 우수<br>
+                        - 고비용 비즈니스클럽 수요 양극화 뚜렷<br>
+                        - 건전성/투명성 지표 점진적 상승 중
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transit Map Section -->
+        <section class="m-main-9f5y t-nav-nyxe-section" id="transit-map">
+            <div class="t-txt-v8i2-header">
+                <h2 class="t-txt-v8i2-title">업종별 <span>트렌드 라인</span></h2>
+                <span class="t-txt-v8i2-meta">METRO-LINE VISUAL METAPHOR</span>
+            </div>
+
+            <div class="m-hero-yw27-line-container">
+                <div class="m-hero-yw27-rail"></div>
+                <div class="m-hero-yw27-rail-active"></div>
+                
+                <div class="m-hero-yw27-stops">
+                    <!-- Stop 01 -->
+                    <div class="m-hero-yw27-stop active">
+                        <div class="r-grid-xji4-dot-wrapper">
+                            <div class="r-grid-xji4-dot"></div>
+                            <span class="r-grid-xji4-code">STN-01 (PUBLIC)</span>
+                        </div>
+                        <h3 class="r-grid-xji4-name">노래방 &amp; 펍</h3>
+                        <p class="r-grid-xji4-desc">가장 대중적이며 진입 장벽이 낮은 캐주얼 소비 영역. 비용의 직관성이 높고 누구나 부담 없이 접근할 수 있는 공간 유형.</p>
+                    </div>
+
+                    <!-- Stop 02 -->
+                    <div class="m-hero-yw27-stop active">
+                        <div class="r-grid-xji4-dot-wrapper">
+                            <div class="random-class
+</body>
+</html>
