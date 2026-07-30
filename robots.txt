@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://review.go-hapjeong-club.xyz/sitemap.xml
+Sitemap: https://review.go-hapjeong-club.xyz/sitemap-pages.xml
